@@ -1,0 +1,1 @@
+Custom Version Built in .NET 6 of https://github.com/FrodeHus/azure-dyndns
