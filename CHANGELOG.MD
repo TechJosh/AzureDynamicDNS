@@ -12,4 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
  - README.MD - Update documentation to reflect the additions above as well as usage and notes.
 
+### Updated
+ - CommandLineParser 2.8.0 to 2.9.1 - multiple bug fixes
+
 ## [1.0.0](https://github.com/TechJosh/AzureDynamicDNS/releases/tag/1.0.0) - 2022-01-14
+### Added
+ - Initial working release allowing a record to be updated on Azure DNS Zones.
