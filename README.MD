@@ -43,6 +43,12 @@ See [config.example.json](azdyndns/config.example.json)
 
 ## Notes
 - ```addtionalRecords``` is optional within the config file.
+- This can be run to be updated as often as necessary via Task Scheduler on Windows or as a cron task on Linux. For example:
+
+    ```
+    ## Run every 15 minutes with the config.json file.
+    */15 * * * * /srv/azdyndns/azdyndns -f /etc/azdyndns/config.json
+    ```
 
 ## Nuget Dependencies
 https://www.nuget.org/packages/CommandLineParser/

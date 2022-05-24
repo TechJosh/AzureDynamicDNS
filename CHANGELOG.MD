@@ -6,7 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.1.0](https://github.com/TechJosh/AzureDynamicDNS/compare/1.0.0...1.1.0) - Current
 ### Added
- - Allow multiple records within the same subscription to be set at the same time.
+ - Allow multiple records within the same subscription to be set at the same time in the config file.
+ - Allow TTL to be set via config.
  - CHANGELOG.MD - Change Log file (this).
 
 ### Changed
