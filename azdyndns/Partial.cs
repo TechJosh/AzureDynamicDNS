@@ -71,7 +71,7 @@ public partial class Program
             {
                 try
                 {
-                    var result = await dnsClient.RecordSets.CreateOrUpdateAsync(o.ResourceGroup, o.Zone, o.Record, RecordType.A, recordSet);
+                    var result = await dnsClient.RecordSets.CreateOrUpdateAsync(record.ResourceGroup, record.Zone, record.Record, RecordType.A, recordSet);
                     Console.WriteLine(JsonSerializer.Serialize(result));
                 }
                 catch (Exception ex)

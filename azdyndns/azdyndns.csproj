@@ -16,6 +16,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<None Update="config.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
 		<None Update="config.example.json">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
