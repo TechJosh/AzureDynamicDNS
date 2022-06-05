@@ -34,4 +34,11 @@ public class Options
     [JsonPropertyName("clientSecret")]
     [Option('x', "client-secret", HelpText = "Azure service principal client secret (or set AZURE_CLIENT_SECRET)")]
     public string? ClientSecret { get; set; }
+
+    [JsonPropertyName("ttl")]
+    [Option('t', "ttl", HelpText = "DNS Record TTL")]
+    public int? TTL { get; set; }
+
+    [JsonPropertyName("additionalRecords")]
+    public List<AdditionalRecord>? AdditionalRecords { get; set; }
 }

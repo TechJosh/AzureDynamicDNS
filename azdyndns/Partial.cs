@@ -37,9 +37,11 @@ public partial class Program
 
         var ipAddr = await GetPublicIPAddress();
 
+        var recordSets = new List<RecordSet>();
+
         var recordSet = new RecordSet()
         {
-            TTL = 3600,
+            TTL = o.TTL ?? 3600,
             ARecords = new List<ARecord>()
                 {
                     new ARecord(ipAddr)
@@ -50,9 +52,41 @@ public partial class Program
                 }
         };
 
-        var result = await dnsClient.RecordSets.CreateOrUpdateAsync(o.ResourceGroup, o.Zone, o.Record, RecordType.A, recordSet);
+        try
+        {
+            var result = await dnsClient.RecordSets.CreateOrUpdateAsync(o.ResourceGroup, o.Zone, o.Record, RecordType.A, recordSet);
+            Console.WriteLine(JsonSerializer.Serialize(result));
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine("Error Creating/Updating Primary Record");
+            Console.Error.WriteLine(ex.Message);
+        }
 
-        Console.WriteLine(JsonSerializer.Serialize(result));
+
+        if (o.AdditionalRecords != null && o.AdditionalRecords.Any())
+        {
+            int index = 1;
+            foreach (var record in o.AdditionalRecords)
+            {
+                try
+                {
+                    var result = await dnsClient.RecordSets.CreateOrUpdateAsync(record.ResourceGroup, record.Zone, record.Record, RecordType.A, recordSet);
+                    Console.WriteLine(JsonSerializer.Serialize(result));
+                }
+                catch (Exception ex)
+                {
+                    Console.Error.WriteLine($"Error Creating/Updating Supplementary Record #{index}");
+                    Console.Error.WriteLine(ex.Message);
+                }
+                finally
+                {
+                    index++;
+                }
+            }
+        }
+
+        
     }
 
     private static async Task<string> GetPublicIPAddress()

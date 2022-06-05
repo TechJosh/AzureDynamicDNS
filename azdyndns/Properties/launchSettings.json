@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "azdyndns": {
+      "commandName": "Project",
+      "commandLineArgs": "-f config.json"
+    }
+  }
+}

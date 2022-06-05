@@ -5,5 +5,13 @@
   "recordName": "",
   "clientId": "",
   "clientSecret": "",
-  "tenantId": ""
+  "tenantId": "",
+  "ttl": 3600,
+  "additionalRecords": [
+    {
+      "resourceGroup": "",
+      "zoneName": "",
+      "recordName": ""
+    }
+  ]
 }
