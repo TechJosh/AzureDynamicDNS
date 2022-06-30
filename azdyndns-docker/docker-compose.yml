@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  ddns:
+    build: .
+    network_mode: host
+    container_name: ddns
+    restart: unless-stopped
+    volumes:
+      - ./config.json:/DockerOutput/App/config.json
