@@ -1,5 +1,7 @@
 # Azure DNS - Dynamic DNS
 
+**Now with Docker** - That has been running beautifully for nearly a month.
+
 Customized .NET 6 appplication based on https://github.com/FrodeHus/azure-dyndns
 
 Used to update one or more DNS A records within an Azure DNS Zone to the IP of the host machine.
@@ -49,6 +51,9 @@ See [config.example.json](azdyndns/config.example.json)
     ## Run every 15 minutes with the config.json file.
     */15 * * * * /srv/azdyndns/azdyndns -f /etc/azdyndns/config.json
     ```
+
+## Docker
+See [ReadMe](azdundns-docker/README.MD)
 
 ## Nuget Dependencies
 https://www.nuget.org/packages/CommandLineParser/
