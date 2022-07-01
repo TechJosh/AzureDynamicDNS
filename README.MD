@@ -53,7 +53,7 @@ See [config.example.json](azdyndns/config.example.json)
     ```
 
 ## Docker
-See [ReadMe](azdundns-docker/README.MD)
+See [ReadMe](azdyndns-docker/README.MD)
 
 ## Nuget Dependencies
 https://www.nuget.org/packages/CommandLineParser/
